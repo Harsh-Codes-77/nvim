@@ -1,12 +1,18 @@
 return {
   -- Colorscheme
+  -- Colorschemes
+  {
+    "folke/tokyonight.nvim",
+    lazy = true,
+    opts = { style = "moon" },
+  },
   {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
     config = function()
       require("catppuccin").setup({
-        flavour = "macchiato", -- lattee, frappe, macchiato, mocha
+        flavour = "macchiato",
         transparent_background = false,
         term_colors = true,
         integrations = {
@@ -15,16 +21,12 @@ return {
           nvimtree = true,
           treesitter = true,
           mason = true,
-          telescope = {
-            enabled = true,
-          },
-          notify = true,
-          mini = {
-            enabled = true,
-            indentscope_color = "",
-          },
+          telescope = { enabled = true },
+          
+          mini = { enabled = true },
         },
       })
+      -- Set the default colorscheme here
       vim.cmd.colorscheme("catppuccin")
     end,
   },
